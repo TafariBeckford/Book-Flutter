@@ -57,25 +57,32 @@ class _HomePageState extends State<HomePage> {
                 return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index){
-                   return Card(
-                        child: new Padding(
+                   return Container(
+                    child: Card(
+                      child: new Padding(
                           padding: new EdgeInsets.all(8.0),
                           child: new Row(
                             children: <Widget>[
-                              snapshot.data[index].url != null? new Image.network(snapshot.data[index].thumbnail): new Container(),
+                             snapshot.data[index].url != null? new Image.network(snapshot.data[index].thumbnail): new Container(),
                               new Flexible(
                                 child: new Text(snapshot.data[index].title, maxLines: 10),
                               ),
                             ],
                           )
                       )
-                  );
-                }else{
-                  return Container(child:Text('Data Coming'));
+                  )
+                   );
                 }
-              }
-                  ), 
+                  );
+              }else{
+                return Container(
+                  child: Text('Data Loading')
+                );
+              }  
+          },
         ),
-       );
+
+       ),
+    );
   }
 }
