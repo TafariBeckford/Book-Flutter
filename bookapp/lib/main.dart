@@ -1,4 +1,4 @@
-import 'package:bookapp/home.dart';
+import 'homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,12 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Book App',
-      theme: ThemeData.dark(),
-      home: HomePage(),
+      theme: ThemeData.dark().copyWith(
+        inputDecorationTheme: const InputDecorationTheme(
+            labelStyle: TextStyle(color: Colors.white),  
+      ),
+      ),
+      home: BookApp(),
     );
   }
 }
-
-
-
