@@ -1,6 +1,6 @@
-# bookapp
+# Book Search App
 
-A new Flutter project.
+Flutter Book Search App using Google Books APIs
 
 ## Getting Started
 
